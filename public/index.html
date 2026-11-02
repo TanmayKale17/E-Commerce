@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the ShopEase product catalogue.">
+  <title>ShopEase | Product Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">S</span> ShopEase</a>
+    <nav><a class="nav-link active" href="/">Products</a><a class="nav-link" href="/admin">Admin</a></nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div><p class="eyebrow">CURATED FOR EVERYDAY</p><h1>Find something<br><span>you’ll love.</span></h1><p class="hero-description">Explore our collection of useful, thoughtfully selected products.</p></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-circle"></div><div class="art-card">✦<br><small>GOOD<br>FINDS</small></div></div>
+    </section>
+    <section class="catalogue">
+      <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>All products</h2></div><span id="result-count" class="result-count">Loading products…</span></div>
+      <div class="toolbar">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search products…" maxlength="100" aria-label="Search products"></label>
+        <label class="select-wrap"><span class="sr-only">Filter by category</span><select id="category"><option value="All">All categories</option><option value="Electronics">Electronics</option><option value="Accessories">Accessories</option><option value="Fashion">Fashion</option><option value="Home">Home</option></select></label>
+      </div>
+      <div id="product-grid" class="product-grid" aria-live="polite"><p class="state-message">Loading catalogue…</p></div>
+    </section>
+  </main>
+  <footer><span>ShopEase</span><span>Full-Stack E-Commerce · Product Catalogue</span></footer>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-panel"><button class="close-button" data-close aria-label="Close details">×</button><div id="modal-content"></div></article>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

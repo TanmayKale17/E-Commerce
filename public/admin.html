@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopEase product administration dashboard.">
+  <title>Admin Dashboard | ShopEase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">S</span> ShopEase</a>
+    <nav><a class="nav-link" href="/">Storefront</a><a class="nav-link active" href="/admin">Admin dashboard</a></nav>
+  </header>
+
+  <main class="admin-container">
+    <section class="admin-heading">
+      <div><p class="eyebrow">STORE MANAGEMENT</p><h1>Product admin</h1><p class="admin-subtitle">Create, search, edit and delete catalogue products.</p></div>
+      <button id="add-product-button" class="primary-button" type="button">＋ Add product</button>
+    </section>
+
+    <section class="admin-stats" aria-label="Catalogue summary">
+      <div class="stat-card"><span>Total products</span><strong id="total-products">—</strong></div>
+      <div class="stat-card"><span>Categories</span><strong id="total-categories">—</strong></div>
+      <div class="stat-card"><span>Catalogue value</span><strong id="catalogue-value">—</strong></div>
+    </section>
+
+    <section class="admin-panel">
+      <div class="panel-heading">
+        <div><h2>Product catalogue</h2><p>Search the catalogue or use the actions on each row.</p></div>
+        <label class="admin-search"><span aria-hidden="true">⌕</span><input id="admin-search" type="search" placeholder="Search name, description or category…" maxlength="100" aria-label="Search products"></label>
+      </div>
+      <div id="notice" class="notice hidden" role="status" aria-live="polite"></div>
+      <div class="table-scroll">
+        <table class="admin-table">
+          <thead><tr><th>Product</th><th>Category</th><th>Price</th><th>ID</th><th>Actions</th></tr></thead>
+          <tbody id="admin-product-rows"><tr><td colspan="5" class="table-state">Loading products…</td></tr></tbody>
+        </table>
+      </div>
+      <p id="table-count" class="table-count"></p>
+    </section>
+  </main>
+
+  <div id="product-dialog" class="dialog hidden" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <div class="dialog-backdrop" data-dismiss></div>
+    <section class="dialog-card">
+      <div class="dialog-heading">
+        <div><p class="eyebrow">PRODUCT DETAILS</p><h2 id="dialog-title">Add product</h2></div>
+        <button class="close-button" type="button" data-dismiss aria-label="Close form">×</button>
+      </div>
+      <form id="product-form">
+        <label>Product name<input name="name" required maxlength="120" autocomplete="off" placeholder="e.g. Wireless Keyboard"></label>
+        <label>Description<textarea name="description" required maxlength="2000" rows="4" placeholder="Describe the product…"></textarea></label>
+        <div class="form-grid">
+          <label>Price (INR)<input name="price" type="number" min="0" max="100000000" step="0.01" required placeholder="999"></label>
+          <label>Category<input name="category" required maxlength="60" placeholder="Electronics"></label>
+        </div>
+        <label>Image URL<input name="image_url" type="url" required maxlength="1000" placeholder="https://example.com/product.jpg"></label>
+        <div class="form-actions">
+          <button type="button" class="secondary-button" data-dismiss>Cancel</button>
+          <button id="save-button" type="submit" class="primary-button">Create product</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

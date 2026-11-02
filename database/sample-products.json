@@ -1,0 +1,8 @@
+[
+  {"name":"Wireless Headphones","description":"Comfortable over-ear headphones with clear sound, deep bass and long battery life.","price":2499,"category":"Electronics"},
+  {"name":"Smart Watch","description":"A lightweight smart watch with activity tracking and notifications.","price":3299,"category":"Electronics"},
+  {"name":"Everyday Backpack","description":"A durable backpack with a padded laptop sleeve and practical pockets.","price":1599,"category":"Accessories"},
+  {"name":"Classic Sneakers","description":"Versatile casual sneakers designed for daily comfort.","price":2799,"category":"Fashion"},
+  {"name":"Minimal Desk Lamp","description":"A modern desk lamp for reading, studying and working.","price":1199,"category":"Home"},
+  {"name":"Ceramic Coffee Mug","description":"A sturdy ceramic mug with a comfortable handle.","price":399,"category":"Home"}
+]
